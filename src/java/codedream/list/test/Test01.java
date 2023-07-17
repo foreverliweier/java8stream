@@ -39,11 +39,11 @@ public class Test01 {
         List<String> actress = new ArrayList<>();
         Collections.addAll(actress, "赵丽颖,35", "殷桃, 43", "杨幂,38", "赵露思,25", "宋祖儿, 25");
 
-        List<String> list1 = actors.stream().filter(s -> s.split(",")[0].length() == 3).limit(2).collect(Collectors.toList());
-        List<String> list2 = actress.stream().filter(s -> s.startsWith("赵")).skip(1).collect(Collectors.toList());
-        List<String> list3 = Stream.concat(list1.stream(),list2.stream()).collect(Collectors.toList());
+        Stream<String> stream1 = actors.stream().filter(s -> s.split(",")[0].length() == 3).limit(2);
+        Stream<String> stream2 = actress.stream().filter(s -> s.startsWith("赵")).skip(1);
+        Stream<String> stream3 = Stream.concat(stream1,stream2);
 
-        List<Actor> reList = list3.stream().map(s -> new Actor(s.split(",")[0],Integer.parseInt(s.split(",")[1]))).collect(Collectors.toList());
+        List<Actor> reList = stream3.map(s -> new Actor(s.split(",")[0],Integer.parseInt(s.split(",")[1]))).collect(Collectors.toList());
         System.out.println(reList);
     }
     class Actor {
