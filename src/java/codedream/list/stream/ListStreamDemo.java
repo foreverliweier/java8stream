@@ -33,7 +33,6 @@ public class ListStreamDemo {
                 list3.add(s);
             }
         }
-
         //遍历打印最终结果
         for (String s : list2) {
             System.out.println(s);
@@ -47,5 +46,8 @@ public class ListStreamDemo {
         System.out.println("#######");
 
         list.stream().filter(name->name.startsWith("张")).filter(name->name .length()==3).forEach(name-> System.out.println(name));
+        System.out.println("#######");
+        list.stream().filter(name->name.startsWith("王")).filter(name->name.length()==3).forEach(name-> System.out.println(name));
+
     }
 }
