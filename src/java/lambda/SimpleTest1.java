@@ -13,7 +13,7 @@ interface MyInterface {
     void doSomething(String a);
 }
 
-public class Test1 {
+public class SimpleTest1 {
 
     @Test
     public void testTraverse() {
