@@ -31,6 +31,9 @@ class Author implements Comparable<Author> {
         this.books = books;
     }
 
+    public Author() {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

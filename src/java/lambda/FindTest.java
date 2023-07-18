@@ -8,8 +8,8 @@ import java.util.Optional;
 import static lambda.Author.getGenAuthors;
 
 /**
- * Find 返回的都是 Optional
- *
+ * Find 返回的都是 Optional<T>
+ *     
  * @author alice
  * @time 2023-07-17 15:08
  **/
