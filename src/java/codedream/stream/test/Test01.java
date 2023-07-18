@@ -1,4 +1,4 @@
-package codedream.list.test;
+package codedream.stream.test;
 
 import org.junit.Test;
 

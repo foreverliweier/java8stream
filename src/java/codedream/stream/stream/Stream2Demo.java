@@ -1,4 +1,4 @@
-package codedream.list.stream;
+package codedream.stream.stream;
 
 import java.util.*;
 import java.util.stream.Collectors;

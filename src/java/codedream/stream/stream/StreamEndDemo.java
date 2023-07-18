@@ -1,7 +1,6 @@
-package codedream.list.stream;
+package codedream.stream.stream;
 
 import java.util.*;
-import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 
 /**

@@ -1,4 +1,4 @@
-package codedream.list.stream;
+package codedream.stream.stream;
 
 import java.util.HashMap;
 import java.util.Map;

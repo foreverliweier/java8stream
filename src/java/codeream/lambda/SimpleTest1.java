@@ -1,4 +1,4 @@
-package lambda;
+package codeream.lambda;
 
 import org.junit.Test;
 

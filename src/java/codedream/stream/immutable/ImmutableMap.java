@@ -1,4 +1,4 @@
-package codedream.list.immutable;
+package codedream.stream.immutable;
 
 import java.util.Map;
 import java.util.Set;
