@@ -9,7 +9,7 @@ import java.util.Objects;
  * @author alice
  * @time 2023-07-17 14:56
  **/
-class Author implements Comparable<Author> {
+public class Author implements Comparable<Author> {
     Long id;
     String name;
     String intro;
