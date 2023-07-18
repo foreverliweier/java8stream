@@ -4,6 +4,8 @@ import codedream.lambda.Author;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static codedream.lambda.Author.getGenAuthors;
@@ -45,6 +47,13 @@ public class ParallelTest {
         System.out.println(sum);
     }
 
+    @Test
+    public void parallelTest2() {
+        List<Author> authors = getGenAuthors();
+        Map<Long, List<Author>> groups = authors.parallelStream().collect(Collectors.groupingBy(Author::getId));
+        System.out.println(groups.get(1L));
+        System.out.println(groups.get(3L));
+    }
     @Test
     public void parallelStreamTest() {
         List<Author> authors = getGenAuthors();

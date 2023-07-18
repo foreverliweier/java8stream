@@ -48,10 +48,10 @@ public class FlatMapTest {
         System.out.println(authors.stream().distinct().flatMap(author -> author.getBooks().stream()).
                 max(Comparator.comparingInt(Book::getScore)).get());
         System.out.println(authors.stream().distinct().flatMap(author -> author.getBooks().stream()).
-                min((o1, o2) -> o1.getScore()-o2.getScore()).get());
+                min(Comparator.comparingInt(Book::getScore)).get());
 
         Integer max = authors.stream().distinct().flatMap(author -> author.getBooks().stream()).map(book->book.getScore()).
-                max((o1, o2) -> o1-o2).get();
+                max(Comparator.comparingInt(o -> o)).get();
         Integer min = authors.stream().distinct().flatMap(author -> author.getBooks().stream()).map(book->book.getScore()).
                 min(Comparator.comparingInt(o -> o)).get();
         System.out.println(max);
@@ -62,7 +62,7 @@ public class FlatMapTest {
     public void pringAuthorNameList(){
         //获取一个存放所有作者名字的 List 集合
         List<Author> authors = getGenAuthors();
-        List<String> list = authors.stream().map(author -> author.getName()).distinct().collect(Collectors.toList());
+        List<String> list = authors.stream().map(Author::getName).distinct().collect(Collectors.toList());
         System.out.println(list);
     }
 
@@ -79,7 +79,7 @@ public class FlatMapTest {
         //获取一个 map 集合，map 的 key 作者名，value 为 list<Book>
         List<Author> authors = getGenAuthors();
         Map<String,List<Book>> map = authors.stream().distinct().
-                collect(Collectors.toMap(author -> author.getName(), author -> author.getBooks()));
+                collect(Collectors.toMap(Author::getName, Author::getBooks));
         System.out.println(map);
     }
 }

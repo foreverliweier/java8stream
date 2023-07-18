@@ -38,7 +38,7 @@ public class OptionalTest {
     public void optionalOGetElse() {
         Optional<Author> optionalAuthor = getNullAbleAuthor();
         //若optionalAuthor value 为空则默认返回一个对象
-        optionalAuthor.orElseGet(() -> new Author());
+        optionalAuthor.orElseGet(Author::new);
         optionalAuthor.ifPresent(author -> System.out.println(author.getName()));
     }
     @Test
@@ -53,7 +53,9 @@ public class OptionalTest {
         optionalAuthor.ifPresent(System.out::println);
         System.out.println("----------");
         //过滤不会改变optionalAuthor value 对应的对象
-        optionalAuthor.filter(author -> author.getName().startsWith("张")).ifPresent(System.out::println);
+        optionalAuthor.
+                filter(author -> author.getName().startsWith("张")).
+                ifPresent(System.out::println);
         System.out.println("----------");
         optionalAuthor.ifPresent(System.out::println);
     }
