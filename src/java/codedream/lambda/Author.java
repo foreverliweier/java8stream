@@ -25,14 +25,6 @@ public class Author implements Comparable<Author> {
     String intro;
     Integer age;
     List<Book> books;
-
-    public Author(Long id, String name, String intro, Integer age) {
-        this.id = id;
-        this.name = name;
-        this.intro = intro;
-        this.age = age;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
