@@ -1,5 +1,10 @@
 package codedream.lambda;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -9,6 +14,11 @@ import java.util.Objects;
  * @author alice
  * @time 2023-07-17 14:56
  **/
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 public class Author implements Comparable<Author> {
     Long id;
     String name;
@@ -21,17 +31,6 @@ public class Author implements Comparable<Author> {
         this.name = name;
         this.intro = intro;
         this.age = age;
-    }
-
-    public Author(Long id, String name, String intro, Integer age, List<Book> books) {
-        this.id = id;
-        this.name = name;
-        this.intro = intro;
-        this.age = age;
-        this.books = books;
-    }
-
-    public Author() {
     }
 
     @Override
@@ -51,45 +50,9 @@ public class Author implements Comparable<Author> {
         return Objects.hash(id);
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
     @Override
     public int compareTo(Author o) {
         return this.getAge().compareTo(o.getAge());
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getIntro() {
-        return intro;
-    }
-
-    public void setIntro(String intro) {
-        this.intro = intro;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
     }
 
     @Override
