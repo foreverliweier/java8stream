@@ -1,4 +1,4 @@
-package codeream.lambda;
+package codedream.lambda;
 
 /**
  * @author alice

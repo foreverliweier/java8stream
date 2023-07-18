@@ -1,11 +1,11 @@
-package codeream.lambda;
+package codedream.lambda;
 
 import org.junit.Test;
 
 import java.util.List;
 import java.util.Optional;
 
-import static codeream.lambda.Author.getGenAuthors;
+import static codedream.lambda.Author.getGenAuthors;
 
 /**
  * Find 返回的都是 Optional<T>

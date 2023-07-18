@@ -1,4 +1,4 @@
-package codeream.lambda;
+package codedream.lambda;
 
 import java.util.ArrayList;
 import java.util.Collections;

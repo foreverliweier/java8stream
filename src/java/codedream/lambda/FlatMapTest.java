@@ -1,11 +1,11 @@
-package codeream.lambda;
+package codedream.lambda;
 
 import org.junit.Test;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static codeream.lambda.Author.getGenAuthors;
+import static codedream.lambda.Author.getGenAuthors;
 
 /**
  * @author alice
